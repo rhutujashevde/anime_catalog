@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+  <div class="row">
+    <div class="col-sm-4">
+        <div class="jumbotron">
+<h1 class= "main-font">Anime Genres</h1>
+        {% for genre in genres %}
+    <h5><li>
+      <a class= "main-font text-dark" href = "{{url_for('showGenre', genre_id = genre.id)}}">{{ genre.name }}</a>
+    </li></h5>
+    {% endfor %}
+<br><br><br></div></div>
+<div class="col-sm-8 jumbotron">
+    <h1 class= "main-font">Recent Animes</h1>
+        {% for anime in animes %}
+    <h5><li>
+      <a class= "main-font text-dark" href = "{{url_for('showAnime', anime_id = anime.id)}}">{{ anime.name }}</a> - {{ anime.genre.name }} {{ anime.atype }}
+    </li></h5>
+    {% endfor %}
+    <br>
+        {% if 'username' in session: %}
+    <a href="/add-anime" class="btn btn-outline-info btn-lg main-font" role="button">Add new Anime</a>
+    {% endif %}
+    </div>
+    <br>
+
+        {% endblock %}
+    

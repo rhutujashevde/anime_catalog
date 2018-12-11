@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>{{anime.name}}</h1>
+<h2><strong>Genre</strong>- {{ anime.genre.name }}</h2>
+<h2><strong>Type</strong>- {{ anime.atype }}</h2>
+<h2><strong>Created by</strong>- {{ anime.user.name }}</h2>
+</br>
+<h2>{{anime.description}}</h2>
+</br></br>
+{% if 'username' in session: %}
+<a href="{{url_for('edit_anime', anime_id = anime.id)}}" class="btn btn-outline-info btn-lg main-font" role="button">Edit Anime</a>
+<a href="{{url_for('delete_anime', anime_id = anime.id)}}" class="btn btn-outline-info btn-lg main-font" role="button">Delete Anime</a>
+      {% else %}
+      <h4><a href="/login">Login</a> to Create-Edit-Delete animes</h4>
+      {% endif %}
+      {% endblock %}

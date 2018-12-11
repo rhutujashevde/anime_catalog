@@ -1,0 +1,14 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<h1>{{genre.name}}</h1>
+</br>
+<h2>{{genre.description}}</h2>
+</br>
+<h2>Animes from {{genre.name}} genre-</h2>
+    {% for anime in animes %}
+    
+     <h4> <a href = "{{url_for('showAnime', anime_id = anime.id)}}">{{ anime.name }}</a></h4>
+    
+    {% endfor %}
+        {% endblock %}

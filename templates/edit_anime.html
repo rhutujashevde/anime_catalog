@@ -1,0 +1,38 @@
+{% extends 'layout.html' %}
+
+{% block body %}
+<form action="{{ url_for('edit_anime',anime_id = anime.id) }}" method="POST">
+<div class="form-group">
+  <h5>Name:</h5>
+  <input class="form-control" type="text" size="30" name="name" value = '{{anime.name}}'>
+  <h5>Description:</h5>
+  <input class="form-control" type="text" size="30"  name="description" value = '{{anime.description}}'>
+  <h5>Anime Type:</h5>
+  <select class="form-control" name="atype">
+    <option value=" " selected="selected"></option>
+    <option value="TV" series >TV series</option>
+    <option value="Movie" >Movie</option>
+    <option value="OVA" >OVA</option>
+    <option value="Special" >Special</option>
+  </select>
+    <h5>Anime Genre:</h5>
+  <select class="form-control" name="genre_id">
+    <option value=" " selected="selected"></option>
+    <option value="1" series >Horror</option>
+    <option value="2" >Action</option>
+    <option value="3" >Romance</option>
+    <option value="4" >Martial Arts</option>
+    <option value="5" >Mystery</option>
+    <option value="6" >Comedy</option>
+    <option value="7" >Sci-Fi</option>
+    <option value="8" >Shonen</option>
+    <option value="9" >Shoujo</option>
+    <option value="10" >Psycological</option>
+  </select>
+  </br></br>
+  <input type="submit" value ="Update" class="btn btn-lg btn-info btn-block main-font">
+</div>
+</form>
+
+</div> 
+{% endblock %}
