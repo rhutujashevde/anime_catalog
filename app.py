@@ -23,7 +23,7 @@ APPLICATION_NAME = "Item Catalog"
 # Database Configuration
 app.config['SECRET_KEY'] = 'thisisasecret'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://catalog:sillypassword@localhost/catalog'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'postgresql://catalog:udacity@localhost/catalog'
 app.config['SQLALCHEMY_COMMIT_ON_TEARDOWN'] = True
 
 db = SQLAlchemy(app)
